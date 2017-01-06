@@ -1,0 +1,300 @@
+$primary-background:#333;
+$primaryfloat-background:#666;
+$primary-font:#FFF;
+$default-font:#222;
+$active-background:#333;
+$active-font:#CCC;
+$inactive-hover-background:#AAA;
+$active-hover-font:#FFF;
+$active-hover-background:#000;
+html {
+    overflow-y: scroll;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0px;
+    font: 100%;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+th,
+td {
+    text-align: center;
+    input {
+        text-align: center;
+    }
+}
+
+.wrapper {
+    position: relative;
+    min-height: 100%;
+    .wrapper-header {
+        background: $primary-background;
+        .title-font {
+            color: $primary-font;
+            font-size: 180%;
+            line-height: 300%;
+        }
+        #logout-btn {
+            position: absolute;
+            left: 25px;
+            top: 23px;
+            background-color: $primaryfloat-background;
+            color: $active-font;
+            padding: 5px 8px;
+            border-radius: 3px;
+            cursor: pointer;
+            &:hover {
+                background: $active-hover-background;
+                color: $active-hover-font;
+            }
+        }
+    }
+    .wrapper-contents {
+        padding-top: 30px;
+        width: 100%;
+        .login-container {
+            padding-top: 30px;
+            margin: 0 auto;
+            width: 290px;
+        }
+        #navi-bar {
+            li {
+                a {
+                    color: $default-font;
+                    &:hover {
+                        background: $inactive-hover-background;
+                    }
+                }
+            }
+            .active {
+                a {
+                    background: $active-background;
+                    color: $active-font;
+                    &:hover {
+                        background: $active-hover-background;
+                        color: $active-hover-font;
+                    }
+                }
+            }
+        }
+        .process-message .alert {
+            position: fixed;
+            width: 50%;
+            top: 100px;
+            margin: auto;
+            text-align: center;
+            display: none;
+            z-index: 50;
+        }
+        #routerview {
+            margin-bottom: 150px;
+            .normal-list-nav {
+                a {
+                    cursor: pointer;
+                }
+                .active-navipage a {
+                    color: white;
+                    background-color: #337ab7;
+                }
+            }
+            .game-list {
+                .btn-group button {
+                    margin: 3px;
+                }
+                .lead {
+                    button {
+                        margin: 5px;
+                    }
+                }
+                .game-list-nav {
+                    a {
+                        cursor: pointer;
+                    }
+                    .active-navipage a {
+                        color: white;
+                        background-color: #337ab7;
+                    }
+                }
+            }
+            .reward-pool {
+                .reward-pool-table {
+                    #reward-pool-tbody {
+                        tr {
+                            line-height: 150%;
+                        }
+                        .plus-tip-sig,.pool-inject-input,.pool-submit-btn{
+                            display: none;
+                        }
+                        .pool-inject-input{
+                            width:50px;
+                        }
+                    }
+                }
+            }
+            .reward-rule-manager {
+                display: none;
+                .table {
+                    tr:hover {
+                        td {
+                            background-color: lightskyblue;
+                        }
+                        th {
+                            background-color: rgba(0, 0, 0, 0);
+                        }
+                    }
+                    td:nth-child(1) {
+                        width: 50%;
+                    }
+                    td:nth-child(2) {
+                        width: 50%;
+                    }
+                    input {
+                        width: 50%;
+                        &:disabled {
+                            background-color: rgba(0, 0, 0, 0);
+                            border: {
+                                style: solid;
+                                color: rgba(0, 0, 0, 0);
+                            }
+                        }
+                    }
+                }
+            }
+            .game-ranking {
+                display: none;
+                .game-ranking-table {
+                    td:nth-child(1) {
+                        width: 15%;
+                    }
+                    td:nth-child(2) {
+                        width: 20%;
+                    }
+                    td:nth-child(3) {
+                        width: 30%;
+                    }
+                    td:nth-child(4) {
+                        width: 40%;
+                    }
+                }
+            }
+            .reward-history {
+                .reward-history-table {
+                    td:nth-child(1) {
+                        width: 10%;
+                    }
+                    td:nth-child(2) {
+                        width: 10%;
+                    }
+                    td:nth-child(3) {
+                        width: 15%;
+                    }
+                    td:nth-child(4) {
+                        width: 15%;
+                    }
+                    td:nth-child(5) {
+                        width: 10%;
+                    }
+                    td:nth-child(6) {
+                        width: 10%;
+                    }
+                    td:nth-child(7) {
+                        width: 30%;
+                    }
+                }
+            }
+            .pop-mask {
+                display: none;
+                position: fixed;
+                left: 0px;
+                top: 0px;
+                z-index: 1;
+                background-color: rgba(0, 0, 0, 0.5);
+                width: 100%;
+                height: 100%;
+            }
+            .pop-form {
+                position: absolute;
+                top: 0px;
+                font: 15px Verdana, sans-serif;
+                .form-header {
+                    width: 100%;
+                    box-sizing: border-box;
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid #ddd;
+                    margin-bottom: 15px;
+                    h4 {
+                        display: inline-block;
+                    }
+                    .pop-close-btn {
+                        float: right;
+                        border: 0;
+                        padding: 0px;
+                        background-color: #fff;
+                        color: #BBB;
+                        cursor: pointer;
+                    }
+                }
+                .form-main {
+                    .form-input {
+                        margin-bottom: 8px;
+                        font: 70%;
+                        label {
+                            box-sizing: border-box;
+                            padding-bottom: 3px;
+                        }
+                        input {
+                            box-sizing: border-box;
+                            width: 100%;
+                            padding: 6px 12px;
+                        }
+                        .submit-pop-form {
+                            float: right;
+                            box-sizing: border-box;
+                        }
+                    }
+                }
+                .new-game-form {
+                    display: none;
+                    position: absolute;
+                    z-index: 2;
+                    border: 0 solid #000;
+                    box-shadow: 0 0 20px #000;
+                    box-sizing: border-box;
+                    padding: 20px;
+                    background-color: #fff;
+                }
+                .delete-game-form {
+                    display: none;
+                    position: absolute;
+                    z-index: 2;
+                    border: 0 solid #000;
+                    box-shadow: 0 0 20px #000;
+                    box-sizing: border-box;
+                    padding: 20px;
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+    footer {
+        position: absolute;
+        bottom: 0px;
+        height: 100px;
+        width: 100%;
+        padding: 20px;
+        background: $primary-background;
+        font-size: 80%;
+        color: $primary-font;
+        margin-top: 20px;
+        text-align: center;
+    }
+}

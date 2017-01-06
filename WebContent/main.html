@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<script type="text/javascript" src="/manager.js"></script>-->
+    <title>管理员网站</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="wrapper-header">
+            <div class="wrapper-title">
+                <h1 class="text-center title-font">管理员网站</h1>
+            </div>
+            <div id="logout-btn">注销</div>
+        </div>
+        <div class="container-fluid">
+            <div class="wrapper-contents row">
+                <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
+                    <ul class="nav nav-pills nav-stacked" role="tablist" id="navi-bar">
+                        <li role="presentation" id="navi-rewardpool"><a href="#">奖金池管理</a></li>
+                        <li role="presentation" id="navi-gamerule"><a href="#/gamerule">挑战规则管理</a></li>
+                        <li role="presentation" id="navi-ranking"><a href="#/ranking">查询挑战排名</a></li>
+                        <li role="presentation" id="navi-rewardlog"><a href="#/rewardlog">查询挑战记录</a></li>
+                        <li role="presentation" id="navi-prizemanager"><a href="#/prizemanager">奖品管理</a></li>
+                        <li role="presentation" id="navi-drawlog"><a href="#/drawlog">查询抽奖记录</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-xs-offset-1 col-sm-7  col-sm-offset-1 col-md-8 col-md-offset-1 col-lg-8 col-lg-offset-1">
+                    <div class="process-message">
+                        <div class="alert alert-warning data-loading" role="alert">处理中......</div>
+                        <div class="alert alert-success" role="alert"></div>
+                        <div class="alert alert-danger" role="alert"></div>
+                    </div>
+                    <div id="routerview"></div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>地址：杭州市良睦路1399号梦想小镇互联网村8号楼3楼</p>
+            <p>邮箱：sale@im-vr.com | 电话：0571-56132839</p>
+            <p>Copyright©2015.杭州映墨科技有限公司 版权所有 ICP备案号：浙ICP备14041706号-2</p>
+        </footer>
+    </div>
+<script type="text/javascript" src="/EventManager/assets/js/manager.js"></script></body>
+
+</html>

@@ -1,0 +1,122 @@
+<div class="game-list">
+    <h4 class="lead">选择游戏<button type="button" class="btn btn-success" id="new-game-btn">新增规则</button><button type="button" class="btn btn-danger"
+            id="delete-game-btn">删除规则</button></h4>
+    <div class="btn-group">
+    </div>
+    <div class="game-list-nav" activepage="1">
+        <ul class="pagination">
+            <li><a>&laquo;</a></li>
+            <li id="game-nav-next"><a>&raquo;</a></li>
+        </ul>
+    </div>
+</div>
+<div class="contents-manager">
+    <div class="panel panel-primary reward-rule-manager">
+        <div class="panel-heading">
+            <h4>奖金规则
+                <button type="button" class="btn btn-warning" id="change-reward-rule">修改</button>
+                <button type="button" class="btn btn-success" id="confirm-change-rule" appid="" style="display:none">确定</button>
+</h4>
+</div>
+<table class="table exist-gamerule-table">
+
+    <thead>
+        <tr>
+            <th>项目</th>
+            <th>设定值</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>价格</td>
+            <td><span><input disabled id="basicpay"></span>元</td>
+        </tr>
+        <tr>
+            <td>返现基准分</td>
+            <td><span><input disabled id="basePoint"></span>分</td>
+        </tr>
+        <tr>
+            <td>进阶一</td>
+            <td><span><input disabled id="upPercentageOne"></span>%<br /><span><input disabled id="rewardOne"></span>元</td>
+
+        </tr>
+        <tr>
+            <td>进阶二</td>
+            <td><span><input disabled id="upPercentageTwo"></span>%<br /><span><input disabled id="rewardTwo"></span>元</td>
+        </tr>
+        <tr>
+            <td>大奖</td>
+            <td><span><input disabled id="finalPoint"></span>分<br /><span><input disabled id="finalreward" value="1000"></span>元</td>
+
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
+<div class="pop-mask"></div>
+<div class="pop-form col-xs-12 col-sm-8 col-sm-offset-1 col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-2">
+    <form class="new-game-form">
+        <div class="form-header">
+            <h4>新增游戏规则</h4>
+            <button class="pop-close-btn glyphicon glyphicon-remove">
+				</button>
+        </div>
+        <div class="form-main">
+            <div class="form-input">
+                <label for="new-game-id">游戏id: </label>
+                <input id="new-game-id" type="text">
+            </div>
+            <div class="form-input">
+                <label for="new-game-price">价格：</label>
+                <input id="new-game-price" type="text">
+            </div>
+            <div class="form-input">
+                <label for="new-game-basicpoint">返现基准分：</label>
+                <input id="new-game-basicpoint" type="text">
+            </div>
+            <div class="form-input">
+                <label for="new-game-upPercentageOne">进阶一条件：</label>
+                <input id="new-game-upPercentageOne" type="text">
+            </div>
+            <div class="form-input">
+                <label for="new-game-rewardOne">进阶一奖金：</label>
+                <input id="new-game-rewardOne" type="text">
+            </div>
+            <div class="form-input">
+                <label for="new-game-upPercentageTwo">进阶二条件：</label>
+                <input id="new-game-upPercentageTwo" type="text">
+            </div>
+            <div class="form-input">
+                <label for="new-game-rewardTwo">进阶二奖金：</label>
+                <input id="new-game-rewardTwo" type="text">
+            </div>
+            <div class="form-input">
+                <label for="new-game-finalpoint">大奖分数：</label>
+                <input id="new-game-finalpoint" type="text">
+            </div>
+            <div class="form-input">
+                <label for="new-game-finalreward">大奖奖金：</label>
+                <input disabled id="new-game-finalreward" type="text" value="1000">
+            </div>
+            <div class="form-input">
+                <button type="button" class="btn btn-success submit-new-gamerule submit-pop-form">提交</button>
+            </div>
+        </div>
+    </form>
+    <form class="delete-game-form">
+        <div class="form-header">
+            <h4>删除游戏规则</h4>
+            <button class="pop-close-btn glyphicon glyphicon-remove">
+				</button>
+        </div>
+        <div class="form-main">
+            <div class="form-input">
+                <label for="delete-game-id">游戏id: </label>
+                <input id="delete-game-id" type="text">
+            </div>
+            <div class="form-input">
+                <button type="button" class="btn btn-danger delete-exist-gamerule submit-pop-form">确认删除</button>
+            </div>
+        </div>
+    </form>
+</div>

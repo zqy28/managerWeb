@@ -1,0 +1,108 @@
+﻿<div class="luckyadmin" style="display: block;">
+		<div class="awards-table">
+			<div class="awards">
+				奖品信息管理
+
+			</div>
+			<div class="item">
+				<table class="item-table">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>奖项</th>
+							<th>奖品详情</th>
+							<th>领奖方式</th>
+							<th>库存</th>
+						</tr>
+					</thead>
+					<tbody id="prizelist">
+						<tr>
+							<th>1</th>
+							<td>一等奖</td>
+							<td>100元电影兑换券</td>			
+							<td style="display: none;">https://jinshuju.net/f/QhOuQU</td>
+							<td style="display: table-cell;"></td>
+							<td class="remain">10</td>							
+						</tr>
+						<tr>
+							<th>2</th>
+							<td>二等奖</td>
+							<td>33元哈根达斯券</td>			
+							<td style="display: none;">https://jinshuju.net/f/wHHYo7</td>
+							<td style="display: table-cell;"></td>
+							<td class="remain">10</td>																		
+						</tr>
+						<tr>
+							<th>3</th>
+							<td>三等奖</td>
+							<td>月度爱奇艺会员</td>
+							<td style="display: none;">https://jinshuju.net/f/bps71C</td>
+							<td style="display: table-cell;"></td>
+							<td class="remain">10</td>															
+						</tr>
+						<tr>
+							<th>4</th>
+							<td>四等奖</td>
+							<td>儿童益智玩具</td>								
+							<td style="display: table-cell;">请直接到工作人员处领取</td>
+							<td style="display: none;"></td>
+							<td class="remain">10</td>
+						</tr>
+						<tr>
+							<th>5</th>
+							<td>五等奖</td>
+							<td>龙星人定制钥匙扣</td>								
+							<td style="display: table-cell;">请直接到工作人员处领取</td>
+							<td style="display: none;"></td>
+							<td class="remain">10</td>
+						</tr>
+						<tr>
+							<th>6</th>
+							<td>六等奖</td>
+							<td>龙星人精美礼品</td>
+							<td style="display: table-cell;">请直接到工作人员处领取</td>
+							<td style="display: none;"></td>
+							<td class="remain">10</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div id="other" class="opacity o_position" style="display: none;"></div>
+	<div id="chgif" class="changegift position" style="display: none;">
+		<form>
+			<div class="form-header">
+				<h2>奖品信息修改</h2>
+				<button type="button" class="close"  id="close">×</button> 
+			</div>
+			<div class="form-main">
+				<div class="form-input">
+					<label for="prizeId">#: </label>
+					<input id="prizeId" type="text" value="" disabled="true">
+				</div>
+				<div class="form-input">
+					<label for="grade">奖项：</label>
+					<input id="grade" type="text" value="" disabled="true">
+				</div>
+				<div class="form-input">
+					<label for="detail">奖品详情：</label>
+					<input id="detail" type="text" value="">
+				</div>
+				<div class="form-input">
+					<label id="methodtext" for="method">领奖方式/二维码url：</label>
+  					<input id="method" type="text" value="">
+				</div>
+				<div class="form-input">
+					<label for="remain">库存：</label>
+					<input id="remain" type="text" value="">
+				</div>
+				<div class="form-input">
+					<input id="ok" type="button" value="确认修改">
+				</div>
+			</div>
+		</form>
+	</div>
+	<div id="tip" class="tip f_position" style="display: none;">
+		修改成功
+	</div>

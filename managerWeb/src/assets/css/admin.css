@@ -1,0 +1,291 @@
+
+.opacity {
+	background-color: #000;
+	opacity: 0.5;
+}
+
+.luckyadmin .awards-table,.winner-table {
+	margin-bottom: 27px;
+	border: 1px solid #337AB7;
+	border-radius: 8px;
+	background-color: #fff;
+}
+
+.luckyadmin .awards,.winner {
+	background-color: #337AB7;
+	color: #fff;
+	font: bold 16px Arial, sans-serif;
+	line-height: 3em;
+	text-indent: 1em;
+	border-top-right-radius: 6px;
+	border-top-left-radius: 6px;
+}
+
+.luckyadmin .item,.info {
+	width: 100%;
+}
+
+.luckyadmin .item-table,.info-table {
+	width: 100%;
+	max-width: 100%;
+	/*border-spacing: 0;*/
+	/*border-collapse: collapse;*/
+	/*overflow: hidden;*/
+	padding: 0 5px;
+}
+
+.luckyadmin tr {
+	width: 100%;
+	border-top: 1px solid #eee;
+	height: 3em;
+	line-height: 3em;
+}
+
+.luckyadmin th {	
+	font: bold 14px Verdana, sans-serif;
+	box-sizing: border-box;
+	padding: 1px;
+	/*vertical-align: middle;*/
+	text-align: center;
+}
+
+.luckyadmin td {
+	font: 14px Verdana, sans-serif;
+	box-sizing: border-box;
+	padding: 1px; 
+	text-align: center;
+}
+
+.luckyadmin thead tr {
+	background-color: #F9F9F9;
+}
+
+.luckyadmin tr:nth-child(even) {
+	background-color: #F9F9F9;
+}
+
+.luckyadmin tbody tr:hover {
+	cursor: pointer;
+	background-color: #efe;
+}
+
+.position {
+	position: absolute;
+	top: 0;
+	z-index: 9999;
+}
+
+.changegift {
+	width: 400px;
+	/*height: 570px;*/
+	margin: 0 auto;
+	border: 0 solid #000;
+	box-shadow: 0 0 20px #000;
+	box-sizing: border-box;
+	padding: 20px;
+	font: 15px Verdana, sans-serif;
+	background-color: #fff;
+}
+
+.changegift .form-header {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10px;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 15px;
+}
+
+.changegift .form-header h2 {
+	display: inline-block;
+	font-size: 16px;
+}
+
+.changegift .form-header .close {
+	float: right;
+	border: 0;
+	/*margin: 3px;*/
+	background-color: #fff;
+}
+
+.changegift .form-header .close span {
+	font-size: 20px;
+}
+
+.changegift .form-main .form-input {
+	height: 70px;
+	margin-bottom: 8px;
+}
+
+.changegift .form-main .form-input label {
+	box-sizing: border-box;
+	display: inline-block;
+	/*width: 100px;*/
+	padding-bottom: 5px;
+}
+
+.changegift .form-main .form-input input {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 6px 12px;
+}
+
+.changegift .form-main .form-input input[type=button] {
+	width: 25%;
+	float: right;
+	border: none;
+	font-size: 14px;
+	box-sizing: border-box;
+	padding: 10px;
+	background-color: #4682B4;
+	border-radius: 4px;
+	color: #fff;
+}
+
+.luckyadmin .page {
+	/*background-color: #aaa;*/
+	display: inline-block;
+}
+
+.luckyadmin .page ul {
+	text-decoration: none;
+}
+
+.luckyadmin .page ul li {
+	display: inline;
+	float: left;
+}
+
+.luckyadmin .page ul li a {
+	font: normal 1em 'Microsoft yahei';
+	text-decoration: none;
+	border: 1px solid #ddd;
+	margin-left: -1px;
+	padding: 5px 9px;
+}
+
+.luckyadmin .page ul li a:not(.active):hover {
+	background-color: #eee;
+	cursor: pointer;
+}
+
+.luckyadmin .page ul li:first-child a {
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+
+.luckyadmin .page ul #next a {
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+.luckyadmin .page ul li:last-child a {
+	display: inline-block;
+	width: 40%;
+}
+
+.luckyadmin .page ul li .jump {
+	margin-top: -5px;
+	font-size: 14px;
+}
+
+.luckyadmin .page ul li .jump input {
+	box-sizing: border-box;
+	width: 20%;
+	padding: 5px 8px;
+	text-align: center;
+}
+
+.luckyadmin .page ul li .jump button {
+	margin-left: 5px;
+	box-sizing: border-box;
+	padding: 5px 8px;
+	font-size: 14px;
+	background-color: #fff;
+}
+
+.luckyadmin .page ul li .jump button:hover {
+	cursor: pointer;
+}
+
+.active {
+	background-color: #ddd;
+}
+
+.scroll {
+	/*overflow: hidden;*/
+}
+
+.o_position {
+	position: fixed !important;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 3;
+}
+
+.f_position {
+	position: fixed !important;
+	top: 200px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 9999999;
+}
+
+.tip {
+	width: 100px;
+	height: 50px;
+	line-height: 50px;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #87CEEB;
+	border-radius: 5px;
+}
+
+@media only screen and (max-width: 905px) {
+    .luckyadmin {
+		width: 98%;
+    }
+    .luckyadmin th {
+    	font-size: 8px;
+    }
+    .luckyadmin td {
+    	font-size: 8px;
+    }
+    .changegift {
+    	width: 90%;
+    	font-size: 12px;
+    }
+    .changegift .form-header h2 {
+		font-size: 14px;
+	}
+    .changegift .form-main input[type=button] {
+    	padding: 3px;
+    }
+    .position {
+    	top: 15px;
+    }
+    .luckyadmin center {
+    	font-size: 8px;
+    }
+    .luckyadmin .page ul li:last-child {
+		width: 40%;
+		margin-left: 20px;
+	}
+    .luckyadmin .page ul li .jump {
+    	font-size: 8px;
+    }
+    .luckyadmin .page ul li #jumppage,#startjump {
+    	font-size: inherit;
+    }
+    .luckyadmin .page ul li:last-child {
+    	display: block;
+    }
+}
+@media only screen and (max-width: 515px) {
+	.luckyadmin .page ul li:last-child {
+		margin-top: 20px;
+		width: 60%;
+	}
+}

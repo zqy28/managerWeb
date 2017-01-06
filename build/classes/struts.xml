@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 指定为开发模式 -->
+	<!-- <constant name="struts.devMode" value="true"></constant> -->
+	<constant name="struts.multipart.saveDir" value="/temp"></constant>
+	<constant name="struts.multipart.maxSize" value="-1"></constant>
+	<constant name="struts.configuration.xml.reload" value="true"></constant>
+
+	<package name="default" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="intercept" class="com.vrimmer.interceptor.MyInterceptor">
+				<param name="excludeMethods">login,logoutAciton,modifyPwd,checkAgency,getWXSign,WXLogin,downLoadFile,verification</param>
+			</interceptor>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="intercept" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+
+		<!-- 定义默认的拦截器 每个Action都会自动引用如果Action中引用了其它的拦截器 默认的拦截器将无效 -->
+		<default-interceptor-ref name="myStack"></default-interceptor-ref>
+		<global-results>
+			<result name="logon" type="redirect">/login</result>
+		</global-results>
+
+
+		<action name="loginAction" class="com.vrimmer.action.MessageAction"
+			method="login">
+			<!-- <result name="success">/login.jsp</result> -->
+		</action>
+		<action name="logoutAction" class="com.vrimmer.action.MessageAction"
+			method="logout">
+			<!-- <result name="success">/login.jsp</result> -->
+		</action>
+		<action name="getGameAction" class="com.vrimmer.action.MessageAction"
+			method="getGame">
+			<!-- <result name="success">/login.jsp</result> -->
+		</action>
+		<action name="getGameRuleAction" class="com.vrimmer.action.MessageAction"
+			method="getGameRule">
+			<!-- <result name="success">/login.jsp</result> -->
+		</action>
+		<action name="setGameRuleAction" class="com.vrimmer.action.MessageAction"
+			method="setGameRule">
+			<!-- <result name="success">/login.jsp</result> -->
+		</action>
+		<action name="setNewGameRuleAction" class="com.vrimmer.action.MessageAction"
+			method="setNewGameRule">
+			<!-- <result name="success">/login.jsp</result> -->
+		</action>
+		<action name="deleteGameRuleAction" class="com.vrimmer.action.MessageAction"
+			method="deleteGameRule">
+			<!-- <result name="success">/login.jsp</result> -->
+		</action>
+		<action name="getGameRankingAction" class="com.vrimmer.action.MessageAction"
+			method="getGameRanking">
+			<!-- <result name="success">/login.jsp</result> -->
+		</action>
+		<action name="getRewardLogAction" class="com.vrimmer.action.MessageAction"
+			method="getRewardLog">
+			<!-- <result name="success">/login.jsp</result> -->
+		</action>
+		<action name="injectPoolAction" class="com.vrimmer.action.MessageAction"
+			method="injectPool">
+			<!-- <result name="success">/login.jsp</result> -->
+		</action>
+		<action name="findAllPoolAction" class="com.vrimmer.action.MessageAction"
+			method="findAllPool ">
+			<!-- <result name="success">/login.jsp</result> -->
+		</action>
+
+		<action name="getPrizesAction" class="com.vrimmer.action.AdminAction"
+			method="getPrizes">
+			<result name="" type="redirect">/home.jsp</result>
+		</action>
+		<action name="updatePrizeAction" class="com.vrimmer.action.AdminAction"
+			method="updatePrize">
+			<result name="" type="redirect">/home.jsp</result>
+		</action>
+		<action name="getRecordsAction" class="com.vrimmer.action.AdminAction"
+			method="getRecords">
+			<result name="" type="redirect">/home.jsp</result>
+		</action>
+
+	</package>
+</struts>
