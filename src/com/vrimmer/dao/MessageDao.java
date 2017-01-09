@@ -115,20 +115,23 @@ public class MessageDao {
 		}
 		return JSonData;
 	}
-	public String findPool(String appId) throws IOException {
-		URL url = new URL(ServletActionContext.getServletContext().getInitParameter("prefixURL") + "findPoolByAppId");
-		String sign = MD5Util.MD5Encode(appId + "ImmAimee", "utf-8");
+	public String findPool() throws IOException {
+		URL url = new URL(ServletActionContext.getServletContext().getInitParameter("prefixURL") + "findPool");
+		Date now = new Date();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		String queryTime = dateFormat.format(now);
+		String sign = MD5Util.MD5Encode(queryTime + "ImmAimee", "utf-8");
+		
 		HashMap<String, Object> data = new HashMap<String, Object>();
-		data.put("appId", appId);
+		data.put("queryTime", queryTime);
 		data.put("sign", sign);
 		String JSonData = restFunc.getJson(url, data);
 		return JSonData;
 	}
-	public String injectPool(int appId,String money) throws IOException {
+	public String injectPool(String money) throws IOException {
 		URL url = new URL(ServletActionContext.getServletContext().getInitParameter("prefixURL") + "injectPool");
-		String sign = MD5Util.MD5Encode(appId + "ImmAimee", "utf-8");
+		String sign = MD5Util.MD5Encode(money + "ImmAimee", "utf-8");
 		HashMap<String, Object> data = new HashMap<String, Object>();
-		data.put("appId", appId);
 		data.put("money", money);
 		data.put("sign", sign);
 		String JSonData = restFunc.getJson(url, data);
@@ -146,6 +149,7 @@ public class MessageDao {
 			rewardSystem.setUpPercentage(log_res.getRewardSystems().get(i).getUpPercentage());
 			rewardSystems.add(i, rewardSystem);
 		}
+		
 		HashMap<String, Object> data = new HashMap<String, Object>();
 		data.put("appId", log_res.getAppId());
 		data.put("price", log_res.getPrice());
@@ -187,6 +191,22 @@ public class MessageDao {
 		data.put("index", index);
 		data.put("pageSize", pageSize);
 		data.put("type", type);
+		data.put("sign", sign);
+		String JSonData = restFunc.getJson(url, data);
+		return JSonData;
+	}
+	
+	public String getExchangelog(int index,int pageSize) throws IOException {
+		URL url = new URL(ServletActionContext.getServletContext().getInitParameter("prefixURL") + "getExchangelog");
+		Date now = new Date();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String queryTime = dateFormat.format(now);
+		String sign = MD5Util.MD5Encode(queryTime + "ImmAimee", "utf-8");
+
+		HashMap<String, Object> data = new HashMap<String, Object>();
+		data.put("index", index);
+		data.put("pageSize", pageSize);
+		data.put("queryTime", queryTime);
 		data.put("sign", sign);
 		String JSonData = restFunc.getJson(url, data);
 		return JSonData;

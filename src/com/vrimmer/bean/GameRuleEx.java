@@ -2,13 +2,13 @@ package com.vrimmer.bean;
 
 public class GameRuleEx {
 	
-	private String rewardSystemId;
+	private int rewardSystemId;
 	private String upPercentage;
 	private String reward;
-	public String getRewardSystemId() {
+	public int getRewardSystemId() {
 		return rewardSystemId;
 	}
-	public void setRewardSystemId(String rewardSystemId) {
+	public void setRewardSystemId(int rewardSystemId) {
 		this.rewardSystemId = rewardSystemId;
 	}
 	public String getUpPercentage() {

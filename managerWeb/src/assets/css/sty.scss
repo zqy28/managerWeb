@@ -97,13 +97,38 @@ td {
         }
         #routerview {
             margin-bottom: 150px;
+            min-width: 400px;
             .normal-list-nav {
+                vertical-align: middle;
+                min-width: 460px;
                 a {
                     cursor: pointer;
                 }
                 .active-navipage a {
                     color: white;
                     background-color: #337ab7;
+                }
+                .lognav-after-ellipsis,
+                .lognav-before-ellipsis {
+                    a {
+                        cursor: default;
+                        border-top: none;
+                        border-bottom: none;
+                        border-right: none;
+                        &:hover {
+                            background-color: rgba(0, 0, 0, 0);
+                        }
+                    }
+                }
+                ul {
+                    display: inline-block;
+                }
+                .jump-page {
+                    margin: 20px 0;
+                    float: right;
+                    input {
+                        width: 30px;
+                    }
                 }
             }
             .game-list {
@@ -126,22 +151,31 @@ td {
                 }
             }
             .reward-pool {
+                max-width: 400px;
                 .reward-pool-table {
                     #reward-pool-tbody {
                         tr {
-                            line-height: 150%;
+                            td {
+                                line-height: 230%;
+                            }
+                            td:nth-child(3) {
+                                width: 50px;
+                                text-align: left;
+                            }
                         }
-                        .plus-tip-sig,.pool-inject-input,.pool-submit-btn{
+                        input {
+                            width: 50px;
+                        }
+                        #pool-inject-value,
+                        .pool-submit-btn {
                             display: none;
-                        }
-                        .pool-inject-input{
-                            width:50px;
                         }
                     }
                 }
             }
             .reward-rule-manager {
                 display: none;
+                max-width: 400px;
                 .table {
                     tr:hover {
                         td {
@@ -187,29 +221,30 @@ td {
                 }
             }
             .reward-history {
-                .reward-history-table {
-                    td:nth-child(1) {
-                        width: 10%;
-                    }
-                    td:nth-child(2) {
-                        width: 10%;
-                    }
-                    td:nth-child(3) {
-                        width: 15%;
-                    }
-                    td:nth-child(4) {
-                        width: 15%;
-                    }
-                    td:nth-child(5) {
-                        width: 10%;
-                    }
-                    td:nth-child(6) {
-                        width: 10%;
-                    }
-                    td:nth-child(7) {
-                        width: 30%;
-                    }
-                }
+                min-width: 600px;
+                // .reward-history-table {
+                //     td:nth-child(1) {
+                //         width: 10%;
+                //     }
+                //     td:nth-child(2) {
+                //         width: 10%;
+                //     }
+                //     td:nth-child(3) {
+                //         width: 15%;
+                //     }
+                //     td:nth-child(4) {
+                //         width: 15%;
+                //     }
+                //     td:nth-child(5) {
+                //         width: 10%;
+                //     }
+                //     td:nth-child(6) {
+                //         width: 10%;
+                //     }
+                //     td:nth-child(7) {
+                //         width: 30%;
+                //     }
+                // }
             }
             .pop-mask {
                 display: none;

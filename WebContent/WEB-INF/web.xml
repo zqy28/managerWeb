@@ -7,20 +7,6 @@
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
-
-	<filter>
-		<filter-name>struts2</filter-name>
-			<filter-class>
-			org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
-			</filter-class>
-	</filter>
-
-	<filter-mapping>
-		<filter-name>struts2</filter-name>
-		<url-pattern>/*</url-pattern>
-		<dispatcher>REQUEST</dispatcher>
-		<dispatcher>FORWARD</dispatcher>
-	</filter-mapping>
 	
 	<!-- 配置登陆过滤器 -->
 <filter>
@@ -36,18 +22,30 @@
   <url-pattern>/*</url-pattern>
 </filter-mapping>
 
+	<filter>
+		<filter-name>struts2</filter-name>
+			<filter-class>
+			org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
+			</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	
+
 	<context-param>
     <param-name>prefixURL</param-name>
-    <!-- <param-value>http://172.16.1.81:8086/</param-value> -->
-    <param-value>http://platform.im-vr.com:8086/</param-value>
-   <!-- <param-value>http://172.16.1.51:8086/Vrimmer/</param-value>  -->
+     <param-value>http://121.40.218.248:8086/</param-value> 
+     <!--<param-value>http://platform.im-vr.com:8086/</param-value>-->
   </context-param>
   
   	<context-param>
     <param-name>prefixURLex</param-name>
     <!-- <param-value>http://172.16.1.81:8086/</param-value> -->
     <param-value>http://platform.im-vr.com:8082/api/v1/game/</param-value>
-   <!-- <param-value>http://172.16.1.51:8086/Vrimmer/</param-value>  -->
   </context-param>
   
 </web-app>

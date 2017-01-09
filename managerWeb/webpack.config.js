@@ -1,5 +1,6 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack');
 module.exports = {
     entry: {
         index: path.resolve(__dirname, './src/index.js')
@@ -59,6 +60,14 @@ module.exports = {
             title: 'Event Manager',
             template: './index.html',
             filename: '../../index.html'
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            output: {
+                comments: false,
+            },
+            compress: {
+                warnings: false
+            }
         })
     ]
 }

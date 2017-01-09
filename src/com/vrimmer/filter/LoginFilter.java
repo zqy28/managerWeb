@@ -49,10 +49,16 @@ public class LoginFilter implements Filter {
 			// 判断如果没有取到员工信息,就跳转到登陆页面
 			if (useId == null || "".equals(useId)) {
 				// 跳转到登陆页面
-				servletResponse.sendRedirect("/EventManager/index.html");
+				if (servletRequest.getHeader("x-requested-with") != null
+						&& servletRequest.getHeader("x-requested-with").equals("XMLHttpRequest")) {
+					// ajax请求
+					servletResponse.setHeader("sessionstatus", "timeout");
+				} else {
+					servletResponse.sendRedirect("/EventManager/index.html");
+				}
 			} else {
 				// 已经登陆,继续此次请求
-				chain.doFilter(request, response);
+				chain.doFilter(servletRequest, servletResponse);
 			}
 		}
 	}

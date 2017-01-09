@@ -2,7 +2,6 @@ package com.vrimmer.bean;
 
 public class BonusPool {
 	private String bonusPoolId;
-	private String appId;
 	private String money;
 	private String type;
 	private String status;
@@ -13,12 +12,6 @@ public class BonusPool {
 	}
 	public void setBonusPoolId(String bonusPoolId) {
 		this.bonusPoolId = bonusPoolId;
-	}
-	public String getAppId() {
-		return appId;
-	}
-	public void setAppId(String appId) {
-		this.appId = appId;
 	}
 	public String getMoney() {
 		return money;

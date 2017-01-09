@@ -286,7 +286,7 @@ public class MessageAction extends ActionSupport {
 		MessageDao uDao = new MessageDao();
 
 		try {
-			String JsonData = uDao.injectPool(appid,money);
+			String JsonData = uDao.injectPool(money);
 			ResultCode result_res = JSON.parseObject(JsonData, ResultCode.class);
 
 			tip = JSON.toJSONString(result_res);
@@ -299,53 +299,16 @@ public class MessageAction extends ActionSupport {
 
 		return null;
 	}
-//	public String findPool() throws Exception {
-//		MessageDao uDao = new MessageDao();
-//
-//		try {
-//			String JsonData = uDao.findPool(appid);
-//			BonusPool_res poolresult = JSON.parseObject(JsonData, BonusPool_res.class);
-//
-//			tip = JSON.toJSONString(poolresult);
-//			response.setContentType("text/plain;charset=UTF-8");
-//			response.getWriter().write(tip);
-//
-//		} catch (Exception e) {
-//			System.err.println(e);
-//		}
-//
-//		return null;
-//	}
-	public String findAllPool() throws Exception {
+	public String findPool() throws Exception {
+		//session.removeAttribute("useId");
+	
 		MessageDao uDao = new MessageDao();
-		int getNameresultCode = 1;
+
 		try {
-			BonusPool_res poolresult=new BonusPool_res();
-			String JsonData = uDao.getGameInfo(index, pageSize);
-			GameInfoPage_res log_res = JSON.parseObject(JsonData, GameInfoPage_res.class);
-			for (GameRuleInfo gameinfo : log_res.getApprules()) {
-				String gameNameJsonData = uDao.getGameName((String) session.getAttribute("useId"), gameinfo.getAppId());
-				GameName_res gameName_res = JSON.parseObject(gameNameJsonData, GameName_res.class);
-				
-				String poolJsonData = uDao.findPool(gameinfo.getAppId());
-				System.out.println("ttt  "+poolJsonData);
-				poolresult = JSON.parseObject(poolJsonData, BonusPool_res.class);
-				
-				if (!(gameName_res.getResultcode().equals("0000")&&poolresult.getResultCode().equals("1"))) {
-					getNameresultCode = 0;
-					break;
-				}
-				gameinfo.setAppName(gameName_res.getGame().getName());
-				gameinfo.setBonusPool(poolresult.getBonusPools());
-				System.out.println(JSON.toJSONString(gameinfo.getBonusPool()));
-			}
+			String JsonData = uDao.findPool();
+			BonusPool_res poolresult = JSON.parseObject(JsonData, BonusPool_res.class);
 
-			if (getNameresultCode != 1) {
-				log_res.setResultCode("0");
-				log_res.setResultMessage(log_res.getResultMessage() + " 获取游戏名失败! 获取奖金池:"+ poolresult.getResultMessage());
-			}
-			tip = JSON.toJSONString(log_res);
-
+			tip = JSON.toJSONString(poolresult);
 			response.setContentType("text/plain;charset=UTF-8");
 			response.getWriter().write(tip);
 
@@ -354,8 +317,61 @@ public class MessageAction extends ActionSupport {
 		}
 
 		return null;
-
 	}
+	public String getExchangelog() throws Exception {
+		MessageDao uDao = new MessageDao();
+
+		try {
+			String JsonData = uDao.getExchangelog(index,pageSize);
+			response.setContentType("text/plain;charset=UTF-8");
+			response.getWriter().write(JsonData);
+
+		} catch (Exception e) {
+			System.err.println(e);
+		}
+
+		return null;
+	}
+//	public String findAllPool() throws Exception {
+//		MessageDao uDao = new MessageDao();
+//		int getNameresultCode = 1;
+//		try {
+//			BonusPool_res poolresult=new BonusPool_res();
+//			String JsonData = uDao.getGameInfo(index, pageSize);
+//			GameInfoPage_res log_res = JSON.parseObject(JsonData, GameInfoPage_res.class);
+//			for (GameRuleInfo gameinfo : log_res.getApprules()) {
+//				String gameNameJsonData = uDao.getGameName((String) session.getAttribute("useId"), gameinfo.getAppId());
+//				GameName_res gameName_res = JSON.parseObject(gameNameJsonData, GameName_res.class);
+//				
+//				String poolJsonData = uDao.findPool(gameinfo.getAppId());
+//				System.out.println("ttt  "+poolJsonData);
+//				poolresult = JSON.parseObject(poolJsonData, BonusPool_res.class);
+//				
+//				if (!(gameName_res.getResultcode().equals("0000")&&poolresult.getResultCode().equals("1"))) {
+//					getNameresultCode = 0;
+//					break;
+//				}
+//				gameinfo.setAppName(gameName_res.getGame().getName());
+//				gameinfo.setBonusPool(poolresult.getBonusPools());
+//				System.out.println(JSON.toJSONString(gameinfo.getBonusPool()));
+//			}
+//
+//			if (getNameresultCode != 1) {
+//				log_res.setResultCode("0");
+//				log_res.setResultMessage(log_res.getResultMessage() + " 获取游戏名失败! 获取奖金池:"+ poolresult.getResultMessage());
+//			}
+//			tip = JSON.toJSONString(log_res);
+//
+//			response.setContentType("text/plain;charset=UTF-8");
+//			response.getWriter().write(tip);
+//
+//		} catch (Exception e) {
+//			System.err.println(e);
+//		}
+//
+//		return null;
+//
+//	}
 
 	private HttpSession getSession() {
 		HttpSession session = ServletActionContext.getRequest().getSession();

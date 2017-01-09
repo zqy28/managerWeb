@@ -7,6 +7,7 @@ import ranking from "../../router/ranking.html";
 import rewardlog from "../../router/rewardlog.html";
 import prizemanager from "../../router/prizemanager.html";
 import drawlog from "../../router/drawlog.html";
+import exchangelog from "../../router/exchangelog.html";
 
 $(document).ready(function () {
     function Router() {
@@ -53,6 +54,10 @@ $(document).ready(function () {
     R.route('/rewardlog', function () {
         res.html(rewardlog);
         $('#navi-rewardlog').trigger("rewardlogEvent");
+    });
+    R.route('/exchangelog', function () {
+        res.html(exchangelog);
+        $('#navi-exchangelog').trigger("exchangelogEvent");
     });
     R.route('/prizemanager', function () {
         res.html(prizemanager);

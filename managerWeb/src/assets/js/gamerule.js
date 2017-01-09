@@ -4,7 +4,7 @@ window.jQuery = $;
 $("#navi-gamerule").on("gameruleEvent", function () {
 
     //读取第一页游戏信息
-    $(".data-loading").stop(true, true).fadeIn();
+    $(".data-loading").stop(true, true).fadeIn(100);
     $.ajax({
         type: 'POST',
         url: 'getGameAction',
@@ -12,12 +12,12 @@ $("#navi-gamerule").on("gameruleEvent", function () {
         dataType: 'json',
         cache: false,
         success: (data) => {
-            $(".data-loading").stop(true, true).fadeOut(100);
+            $(".data-loading").delay(300).fadeOut(100);
             if (data.resultCode !== "1") {
-                $(".alert-danger").html(data.resultMessage).stop(true, true).fadeIn(200).delay(1000).fadeOut(200);
+                $(".alert-danger").html(data.resultMessage).stop(true, true).fadeIn(200).delay(2000).fadeOut(200);
                 return;
             }
-            //$(".alert-success").html("成功获取游戏列表").stop(true, true).fadeIn(200).delay(1000).fadeOut(200);
+            //$(".alert-success").html("成功获取游戏列表").stop(true, true).fadeIn(200).delay(2000).fadeOut(200);
             for (let i = 0; i < data.apprules.length; i++) {
                 $(".btn-group").append(`<button type='button' class='btn btn-info select-game-btn' appid='${data.apprules[i].appId}'>${data.apprules[i].appId} ${data.apprules[i].appName}</button>`);
 
@@ -31,7 +31,7 @@ $("#navi-gamerule").on("gameruleEvent", function () {
         error: (xhr, status, err) => {
             console.error(xhr.status, xhr.responseText, status, err.toString());
             $(".data-loading").stop(true, true).fadeOut(100);
-            $(".alert-danger").html(xhr.responseText).stop(true, true).fadeIn(200).delay(1000).fadeOut(200);
+            $(".alert-danger").html(xhr.responseText).stop(true, true).fadeIn(200).delay(2000).fadeOut(200);
         }
     });
 
@@ -55,15 +55,15 @@ $("#navi-gamerule").on("gameruleEvent", function () {
             dataType: 'json',
             cache: false,
             success: (data) => {
-                $(".data-loading").stop(true, true).fadeOut(100);
+                $(".data-loading").delay(300).fadeOut(100);
                 if(pageNow>data.pageNum){
                     $(`.game-list-nav .active-navipage`).removeClass("active-navipage");
                     $(`.game-list-nav li[index=${pageNow-1}]`).addClass("active-navipage");
                     $(".active-navipage a").trigger("click");
                     return;}
-                //$(".alert-success").html("成功获取游戏列表").stop(true, true).fadeIn(200).delay(1000).fadeOut(200);
+                //$(".alert-success").html("成功获取游戏列表").stop(true, true).fadeIn(200).delay(2000).fadeOut(200);
                 if (data.resultCode !== "1") {
-                    $(".alert-danger").html(data.resultMessage).stop(true, true).fadeIn(200).delay(1000).fadeOut(200);
+                    $(".alert-danger").html(data.resultMessage).stop(true, true).fadeIn(200).delay(2000).fadeOut(200);
                     return;
                 }
                 $(".btn-group").html(`<button type='button' class='btn btn-info select-game-btn' appid='${data.apprules[0].appId}'>${data.apprules[0].appId} ${data.apprules[0].appName}</button>`);
@@ -79,7 +79,7 @@ $("#navi-gamerule").on("gameruleEvent", function () {
             error: (xhr, status, err) => {
                 console.error(xhr.status, xhr.responseText, status, err.toString());
                 $(".data-loading").stop(true, true).fadeOut(100);
-                $(".alert-danger").html(xhr.responseText).stop(true, true).fadeIn(200).delay(1000).fadeOut(200);
+                $(".alert-danger").html(xhr.responseText).stop(true, true).fadeIn(200).delay(2000).fadeOut(200);
             }
         });
     });
@@ -109,12 +109,12 @@ $("#navi-gamerule").on("gameruleEvent", function () {
             dataType: 'json',
             cache: false,
             success: (data) => {
-                $(".data-loading").stop(true, true).fadeOut(100);
+                $(".data-loading").delay(300).fadeOut(100);
                 if (data.resultCode !== "1") {
-                    $(".alert-danger").html(data.resultMessage).stop(true, true).fadeIn(200).delay(1000).fadeOut(200);
+                    $(".alert-danger").html(data.resultMessage).stop(true, true).fadeIn(200).delay(2000).fadeOut(200);
                     return;
                 }
-                $(".alert-success").html("成功添加").stop(true, true).fadeIn(200).delay(1000).fadeOut(200);
+                $(".alert-success").html("成功添加").stop(true, true).fadeIn(200).delay(2000).fadeOut(200);
                 $(".pop-mask").css("display", "none");
                 $(".new-game-form").css("display", "none");
                 $(".active-navipage a").trigger("click");
@@ -122,7 +122,7 @@ $("#navi-gamerule").on("gameruleEvent", function () {
             error: (xhr, status, err) => {
                 console.error(xhr.status, xhr.responseText, status, err.toString());
                 $(".data-loading").stop(true, true).fadeOut(100);
-                $(".alert-danger").html(xhr.responseText).stop(true, true).fadeIn(200).delay(1000).fadeOut(200);
+                $(".alert-danger").html(xhr.responseText).stop(true, true).fadeIn(200).delay(2000).fadeOut(200);
             }
         })
 
@@ -134,7 +134,7 @@ $("#navi-gamerule").on("gameruleEvent", function () {
         $(".delete-game-form").css("display", "block");
     })
     $(".delete-exist-gamerule").click(function () {
-        $(".data-loading").stop(true, true).fadeIn(100);
+        
         $.ajax({
             type: 'POST',
             url: 'deleteGameRuleAction',
@@ -142,12 +142,12 @@ $("#navi-gamerule").on("gameruleEvent", function () {
             dataType: 'json',
             cache: false,
             success: (data) => {
-                $(".data-loading").stop(true, true).fadeOut(100);
+                
                 if (data.resultCode !== "1") {
-                    $(".alert-danger").html(data.resultMessage).stop(true, true).fadeIn(200).delay(1000).fadeOut(200);
+                    $(".alert-danger").html(data.resultMessage).stop(true, true).fadeIn(200).delay(2000).fadeOut(200);
                     return;
                 }
-                $(".alert-success").html("成功删除").stop(true, true).fadeIn(200).delay(1000).fadeOut(200);
+                $(".alert-success").html("成功删除").stop(true, true).fadeIn(200).delay(2000).fadeOut(200);
                 $(".pop-mask").css("display", "none");
                 $(".delete-game-form").css("display", "none");
                 $(".active-navipage a").trigger("click");
@@ -155,7 +155,7 @@ $("#navi-gamerule").on("gameruleEvent", function () {
             error: (xhr, status, err) => {
                 console.error(xhr.status, xhr.responseText, status, err.toString());
                 $(".data-loading").stop(true, true).fadeOut(100);
-                $(".alert-danger").html(xhr.responseText).stop(true, true).fadeIn(200).delay(1000).fadeOut(200);
+                $(".alert-danger").html(xhr.responseText).stop(true, true).fadeIn(200).delay(2000).fadeOut(200);
             }
         })
 
@@ -163,7 +163,7 @@ $("#navi-gamerule").on("gameruleEvent", function () {
 
     //查看某个游戏的规则
     $(".btn-group").click(function (data) {
-        $(".data-loading").stop(true, true).fadeIn(100);
+        
         if ($(data.target).hasClass("select-game-btn")) {
             let targetId = $(data.target).attr("appid");
             $("#confirm-change-rule").attr("appid", targetId);
@@ -174,13 +174,12 @@ $("#navi-gamerule").on("gameruleEvent", function () {
                 dataType: 'json',
                 cache: false,
                 success: (data) => {
-                    $(".data-loading").stop(true, true).fadeOut(100);
-
+                   
                     if (data.resultCode !== "1") {
-                        $(".alert-danger").html(data.resultMessage).stop(true, true).fadeIn(200).delay(1000).fadeOut(200);
+                        $(".alert-danger").html(data.resultMessage).stop(true, true).fadeIn(200).delay(2000).fadeOut(200);
                         return;
                     }
-                    //$(".alert-success").html("读取成功").stop(true, true).fadeIn(200).delay(1000).fadeOut(200);
+                    //$(".alert-success").html("读取成功").stop(true, true).fadeIn(200).delay(2000).fadeOut(200);
                     $(".exist-gamerule-table #basicpay").val(data.apprule.price);
                     $(".exist-gamerule-table #basePoint").val(data.apprule.basePoint);
                     $(".exist-gamerule-table #finalPoint").val(data.apprule.finalPoint);
@@ -192,7 +191,7 @@ $("#navi-gamerule").on("gameruleEvent", function () {
                 error: (xhr, status, err) => {
                     console.error(xhr.status, xhr.responseText, status, err.toString());
                     $(".data-loading").stop(true, true).fadeOut(100);
-                    $(".alert-danger").html(xhr.responseText).stop(true, true).fadeIn(200).delay(1000).fadeOut(200);
+                    $(".alert-danger").html(xhr.responseText).stop(true, true).fadeIn(200).delay(2000).fadeOut(200);
                 }
             });
             $(".reward-rule-manager").hide();
@@ -230,17 +229,17 @@ $("#navi-gamerule").on("gameruleEvent", function () {
             dataType: 'json',
             cache: false,
             success: (data) => {
-                $(".data-loading").stop(true, true).fadeOut(100);
+                $(".data-loading").delay(300).fadeOut(100);
                 if (data.resultCode !== "1") {
-                    $(".alert-danger").html(data.resultMessage).stop(true, true).fadeIn(200).delay(1000).fadeOut(200);
+                    $(".alert-danger").html(data.resultMessage).stop(true, true).fadeIn(200).delay(2000).fadeOut(200);
                     return;
                 }
-                $(".alert-success").html("修改成功").stop(true, true).fadeIn(200).delay(1000).fadeOut(200);
+                $(".alert-success").html("修改成功").stop(true, true).fadeIn(200).delay(2000).fadeOut(200);
             },
             error: (xhr, status, err) => {
                 console.error(xhr.status, xhr.responseText, status, err.toString());
                 $(".data-loading").stop(true, true).fadeOut(100);
-                $(".alert-danger").html(xhr.responseText).stop(true, true).fadeIn(200).delay(1000).fadeOut(200);
+                $(".alert-danger").html(xhr.responseText).stop(true, true).fadeIn(200).delay(2000).fadeOut(200);
             }
         })
 

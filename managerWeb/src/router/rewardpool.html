@@ -4,24 +4,33 @@
         </h4>
     </div>
     <table class="table table-striped reward-pool-table">
+
         <thead>
             <tr>
-                <th>游戏id</th>
-                <th>游戏名</th>
-                <th>进水池</th>
-                <th colspan="2">注入池</th>
-                <th>出水池</th>
+                <th>项目</th>
+                <th>设定值</th>
+                <th></th>
             </tr>
         </thead>
         <tbody id="reward-pool-tbody">
+            <tr>
+                <td>进水池</td>
+                <td><span id="pool-input-value" type="1"></span>元</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>出水池</td>
+                <td><span id="pool-output-value" type="3"></span>元</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>注入池</td>
+                <td><span type="2"></span>元 <span id="pool-inject-value"> + <input></span>
+                    <td><button type="button" class="btn btn-warning pool-request-btn">注入</button>
+                        <button type="button" class="btn btn-success pool-submit-btn">确定</button></td>
+                </td>
+
+            </tr>
         </tbody>
     </table>
-</div>
-<div class="game-list">
-    <div class="game-list-nav" activepage="1">
-        <ul class="pagination">
-            <li><a>&laquo;</a></li>
-            <li id="game-nav-next"><a>&raquo;</a></li>
-        </ul>
-    </div>
 </div>

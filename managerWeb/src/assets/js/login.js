@@ -1,6 +1,17 @@
 import $ from 'jquery';
 window.$ = $;
 window.jQuery = $;
+jQuery.ajaxSetup({
+    contentType : "application/x-www-form-urlencoded;charset=utf-8",
+    complete : function(XMLHttpRequest, textStatus) {
+        var sessionstatus = XMLHttpRequest.getResponseHeader("sessionstatus"); // 通过XMLHttpRequest取得响应头，sessionstatus，
+        if (sessionstatus == "timeout") {
+            // 如果超时就处理 ，指定要跳转的页面
+            window.location.replace("/EventManager/index.htm");
+        }
+    }
+}); 
+
 $(document).ready(function () {
     $("#login-btn").click(
         function () {

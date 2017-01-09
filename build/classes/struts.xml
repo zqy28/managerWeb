@@ -11,20 +11,20 @@
 	<constant name="struts.configuration.xml.reload" value="true"></constant>
 
 	<package name="default" namespace="/" extends="struts-default">
-		<interceptors>
+		<!-- <interceptors>
 			<interceptor name="intercept" class="com.vrimmer.interceptor.MyInterceptor">
-				<param name="excludeMethods">login,logoutAciton,modifyPwd,checkAgency,getWXSign,WXLogin,downLoadFile,verification</param>
+				<param name="excludeMethods">login</param>
 			</interceptor>
 			<interceptor-stack name="myStack">
 				<interceptor-ref name="intercept" />
 				<interceptor-ref name="defaultStack" />
 			</interceptor-stack>
-		</interceptors>
+		</interceptors>  -->
 
 		<!-- 定义默认的拦截器 每个Action都会自动引用如果Action中引用了其它的拦截器 默认的拦截器将无效 -->
-		<default-interceptor-ref name="myStack"></default-interceptor-ref>
+		<!-- <default-interceptor-ref name="myStack"></default-interceptor-ref> -->
 		<global-results>
-			<result name="logon" type="redirect">/login</result>
+			<result name="logon" type="redirect">/</result>
 		</global-results>
 
 
@@ -68,8 +68,16 @@
 			method="injectPool">
 			<!-- <result name="success">/login.jsp</result> -->
 		</action>
+		<action name="findPoolAction" class="com.vrimmer.action.MessageAction"
+			method="findPool ">
+			<!-- <result name="success">/login.jsp</result> -->
+		</action>
 		<action name="findAllPoolAction" class="com.vrimmer.action.MessageAction"
 			method="findAllPool ">
+			<!-- <result name="success">/login.jsp</result> -->
+		</action>
+		<action name="getExchangelogAction" class="com.vrimmer.action.MessageAction"
+			method="getExchangelog ">
 			<!-- <result name="success">/login.jsp</result> -->
 		</action>
 
@@ -81,10 +89,10 @@
 			method="updatePrize">
 			<result name="" type="redirect">/home.jsp</result>
 		</action>
+		
 		<action name="getRecordsAction" class="com.vrimmer.action.AdminAction"
 			method="getRecords">
 			<result name="" type="redirect">/home.jsp</result>
 		</action>
-
 	</package>
 </struts>
