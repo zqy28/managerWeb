@@ -161,6 +161,7 @@
 	border: 1px solid #ddd;
 	margin-left: -1px;
 	padding: 5px 9px;
+	color: #337ab7;
 }
 
 .luckyadmin .page ul li a:not(.active):hover {
@@ -178,29 +179,35 @@
 	border-bottom-right-radius: 8px;
 }
 
-.luckyadmin .page ul li:last-child a {
+.luckyadmin .page .jump {
 	display: inline-block;
-	width: 40%;
-}
-
-.luckyadmin .page ul li .jump {
+	width: 200px;
+	float: right;
 	margin-top: -5px;
 	font-size: 14px;
+	text-align: right;
 }
 
-.luckyadmin .page ul li .jump input {
+.luckyadmin .page .jump input {
 	box-sizing: border-box;
 	width: 20%;
-	padding: 5px 8px;
+	padding: 4px;
 	text-align: center;
 }
 
-.luckyadmin .page ul li .jump button {
-	margin-left: 5px;
+.luckyadmin .page .jump button {
 	box-sizing: border-box;
-	padding: 5px 8px;
+	padding: 5px 10px;
 	font-size: 14px;
-	background-color: #fff;
+	background-color: #337ab7;
+	color: #fff;
+	border: 1px solid transparent;
+	border-color: #2e6da4;
+	border-radius: 4px;
+}
+
+.luckyadmin .page .jump button:hover {
+	cursor: pointer;
 }
 
 .luckyadmin .page ul li .jump button:hover {
@@ -208,7 +215,8 @@
 }
 
 .active {
-	background-color: #ddd;
+	background-color: #337ab7;
+	color: #fff;
 }
 
 .scroll {
@@ -243,9 +251,10 @@
 	border-radius: 5px;
 }
 
-@media only screen and (max-width: 905px) {
+@media only screen and (max-width: 1000px) {
     .luckyadmin {
-		width: 98%;
+	width: 98%;
+	min-width: 600px;
     }
     .luckyadmin th {
     	font-size: 8px;
@@ -266,26 +275,18 @@
     .position {
     	top: 15px;
     }
-    .luckyadmin center {
+    .luckyadmin .page .jump {
     	font-size: 8px;
     }
-    .luckyadmin .page ul li:last-child {
-		width: 40%;
-		margin-left: 20px;
-	}
-    .luckyadmin .page ul li .jump {
-    	font-size: 8px;
-    }
-    .luckyadmin .page ul li #jumppage,#startjump {
+    .luckyadmin .page #jumppage,#startjump {
     	font-size: inherit;
     }
-    .luckyadmin .page ul li:last-child {
-    	display: block;
-    }
 }
-@media only screen and (max-width: 515px) {
-	.luckyadmin .page ul li:last-child {
-		margin-top: 20px;
-		width: 60%;
+@media only screen and (max-width: 870px) {
+	.luckyadmin .page .jump{
+		display: block;
+	}
+	.changegift .form-main .form-input input[type=button] {
+		font-size: 12px;
 	}
 }
